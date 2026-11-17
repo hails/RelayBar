@@ -200,11 +200,7 @@ final class UpdateRelaunchGate {
 @MainActor
 enum UpdateServiceFactory {
     static let shared: any UpdateServicing = {
-        #if canImport(Sparkle)
-        SparkleUpdateService()
-        #else
         UnavailableUpdateService()
-        #endif
     }()
 }
 
